@@ -5,3 +5,6 @@ Purpose: To create a simple, temperary portfolio site to display work done by my
 Contents:
 
 	README: This file!
+	index.html: home page for jasapple.github.io webpage
+	listen.html: html5 player for WITR stream
+	static/ : 	Static files Directory
