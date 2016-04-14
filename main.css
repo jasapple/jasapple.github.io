@@ -29,6 +29,8 @@ a:active {
     color: blue;
 }
 	
+#wrapper{min-height: 100%;}	
+
 #header{
 	height: 48px;
 	margin-left:15%;
@@ -48,14 +50,13 @@ a:active {
 }
 	
 #footer {
-	position:absolute;
-	bottom:0;
-	width: 100%;
-	max-width:960px;
+    position: relative;
+	margin-top:-48px;
 	height: 40px;
-	background-color:#E0E0E0;
 	margin-left:15%;
 	margin-right:15%;
+	background-color:#E0E0E0;
+	clear:both;
 }
 .text_footer{
 	color:#707070;
