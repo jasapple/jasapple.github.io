@@ -1,0 +1,67 @@
+html {
+	font-family:"HelveticaNeue-Light", "Helvetiva Neue Light", Helvetica, Arial, 
+	"Lucida Grande", sans-serif;
+	background-color:#F5F6F7;
+		
+}
+html,body{
+	width:100%;
+	height:100%;
+}
+
+/* unvisited link */
+a:link {
+    color: blue;
+}
+
+/* visited link */
+a:visited {
+    color: blue;
+}
+
+/* mouse over link */
+a:hover {
+    color: black;
+}
+
+/* selected link */
+a:active {
+    color: blue;
+}
+	
+#header{
+	height: 48px;
+	margin-left:15%;
+	margin-right:15%;
+	box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+	border-radius: 6px;
+	background-color: #999;
+		
+}
+.text_header{
+	color:#FFF;	
+	text-align:center;
+	font-family:"Arial";
+	font-size:24px;
+	line-height: 24px;
+	vertical-align:middle;		
+}
+	
+#footer {
+	position:absolute;
+	bottom:0;
+	width: 100%;
+	max-width:960px;
+	height: 40px;
+	background-color:#E0E0E0;
+	margin-left:15%;
+	margin-right:15%;
+}
+.text_footer{
+	color:#707070;
+	text-align:center;
+	font-family:"Arial";
+	font-size:14px;
+	line-height: 14px;
+	vertical-align:middle;
+	}
