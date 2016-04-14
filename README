@@ -7,4 +7,5 @@ Contents:
 	README: This file!
 	index.html: home page for jasapple.github.io webpage
 	listen.html: html5 player for WITR stream
+	main.css: main style sheet. I do all my own styles.
 	static/ : 	Static files Directory
