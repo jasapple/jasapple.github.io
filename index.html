@@ -14,6 +14,17 @@
 </head>
 
 <body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#header').fadeIn(1200);
+        $('#footer').delay(1000).fadeIn(2000);
+        $('#content').delay(700).animate({
+            left: '0%',
+            opacity: '1.0'
+        },2000);
+    });
+</script>
 <div id="wrapper">
     <div id = "header">
 		<div class = "text_header">
