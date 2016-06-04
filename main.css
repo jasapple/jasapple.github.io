@@ -11,22 +11,22 @@ html,body{
 
 /* unvisited link */
 a:link {
-    color: blue;
+    color: #1E2F5C;
 }
 
 /* visited link */
 a:visited {
-    color: blue;
+    color: #1E2F5C;
 }
 
 /* mouse over link */
 a:hover {
-    color: black;
+    color: #7FD1E3;
 }
 
 /* selected link */
 a:active {
-    color: blue;
+    color: #1E2F5C;
 }
 	
 #wrapper{min-height: 100%;}	
@@ -48,7 +48,21 @@ a:active {
 	line-height: 24px;
 	vertical-align:middle;		
 }
-	
+
+#content {
+    padding-top: 2%;
+    padding-left: 20%;
+    padding-right: 20%
+
+}
+
+#content span {
+    float: left;
+    clear: left;
+    display: block;
+    padding-top: 6px;
+}
+
 #footer {
     position: relative;
 	margin-top:-48px;
