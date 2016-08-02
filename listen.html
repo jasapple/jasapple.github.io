@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="listen.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body bgcolor='faea34'>
-	<div style="color:#0ea5de">
-		<audio controls autoplay>
-		    <source src="http://streaming.witr.rit.edu:8000/witr-mp3-192" type="audio/mp3">
-		    You do not Support HTML5 audio! boo.
-		</audio>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<script>
+    $.getJSON('http://logger.witr.rit.edu/latest.json', function (data) {
+        console.log(data);
+        alert(data.artist);
+    });
+
+</script>
+	<div id="wrapper">
+	    <div id="listener">
+		    <audio controls autoplay>
+		        <source src="http://streaming.witr.rit.edu:8000/witr-mp3-192" type="audio/mp3">
+		        You do not Support HTML5 audio! boo.
+		    </audio>
+		</div>
+		
+		<div id="result"> </div>
 	</div>
 </body>
 </html>
