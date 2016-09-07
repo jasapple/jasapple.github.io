@@ -11,16 +11,32 @@ body{
 	margin:unset;
 }
 
-
 #wrapper{
     min-height: 100%;
     padding:0%;
-	color: #faea34;
 }
 
 #listener{
     display:block;
     margin: auto;
-    padding-top:10%;
+    padding-top:1%;
     width: 200px;
+}
+
+#song_wrapper{
+    display: block;
+    margin: auto;
+    width: 25%;
+    padding-top: 4%;
+}
+
+#song {
+    color: black;
+    display: block;
+    width: 100%;
+}
+
+#song table {
+    margin-left: auto;
+    margin-right: auto;
 }

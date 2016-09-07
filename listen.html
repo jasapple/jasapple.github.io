@@ -10,19 +10,23 @@
 <script>
     $.getJSON('http://logger.witr.rit.edu/latest.json', function (data) {
         console.log(data);
-        alert(data.artist);
+        var content = $('<table/>');
+        content.append("<td>" + data.artist + ": " + data.title + "</td>");
+        $("#song").append(content);
     });
 
 </script>
 	<div id="wrapper">
+	<a href="index.html">home</a>
 	    <div id="listener">
 		    <audio controls autoplay>
 		        <source src="http://streaming.witr.rit.edu:8000/witr-mp3-192" type="audio/mp3">
 		        You do not Support HTML5 audio! boo.
 		    </audio>
 		</div>
-		
-		<div id="result"> </div>
+		<div id="song_wrapper">
+		    <div id="song"></div>
+		</div>
 	</div>
 </body>
 </html>

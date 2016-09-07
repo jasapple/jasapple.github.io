@@ -86,3 +86,18 @@ a:active {
 	line-height: 14px;
 	vertical-align:middle;
 	}
+	
+#allthestuff{
+    position: absolute;
+    width: 50%;
+    padding-top: 2%;
+    padding-left:15%;
+    padding-right:15%;
+}
+
+#allthestuff span {
+    float: left;
+    clear: left;
+    display: block;
+    padding-top: 6px;
+}
