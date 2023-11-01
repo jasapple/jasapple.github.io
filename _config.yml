@@ -1,6 +1,74 @@
-destination: ./_site
-lsi: false
-highlighter: rouge
-markdown: rdiscount
-permalink: date
-exclude: ['README']
+title: Joshua Amrik Singh
+email: hi@jasapple.com
+description: ""
+github_username: jasapple
+minimal_mistakes_skin: dark
+search: false
+locale: "en-US"
+title_separator: "|"
+url: "http://jasapple.com"
+# Build settings
+markdown: kramdown
+remote_theme: mmistakes/minimal-mistakes
+# Outputting
+permalink: /:categories/:title/
+paginate: 5 # amount of posts to show
+paginate_path: /page:num/
+timezone: PDT # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+atom_feed:
+  hide: true
+
+include:
+  - _pages
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-gist
+  - jekyll-feed
+  - jemoji
+  - jekyll-include-cache
+
+author:
+  name   : "Joshua Amrik Singh"
+  avatar : "/assets/images/logo.png"
+  bio    : "Automate all the things!"
+  links:
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "http://jasapple.com"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jasapple"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jasapple/"
+
+footer:
+  links:
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/jasapple"
+    - label: "LinkedIn"
+      icon: "fab fa-fw fa-linkedin"
+      url: "https://www.linkedin.com/in/jasapple/"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: false
+      share: false
+      related: false
+  # _pages
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: single
+      author_profile: true

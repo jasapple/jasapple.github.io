@@ -1,11 +1,5 @@
-Author: Joshua Singh (jxs6565@rit.edu)
+Author: Joshua Singh (hi@jasapple.com)
 
-Purpose: To create a simple, temperary portfolio site to display work done by myself.
+Purpose: About me website to display resume, a bit about me, and any project blog posts.
 
-Contents:
-
-	README: This file!
-	index.html: home page for jasapple.github.io webpage
-	listen.html: html5 player for WITR stream
-	main.css: main style sheet. I do all my own styles.
-	static/ : 	Static files Directory
+Created using the [Minimual Mistakes](https://mademistakes.com/work/jekyll-themes/minimal-mistakes/) Jeykl Theme and hosted on Github Pages.
