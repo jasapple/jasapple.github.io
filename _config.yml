@@ -7,6 +7,13 @@ search: false
 locale: "en-US"
 title_separator: "|"
 url: "http://jasapple.com"
+
+analytics:
+  provider: "google-gtag"
+  google:
+    tracking_id: "G-JC69E1ZZE4"
+    anonymize_ip: false # default
+
 # Build settings
 markdown: kramdown
 remote_theme: mmistakes/minimal-mistakes
