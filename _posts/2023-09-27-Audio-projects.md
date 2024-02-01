@@ -15,6 +15,6 @@ I assisted in remixing the audio for this video of Kuli performing their song 'K
 
 [NPR - Can You Power A House With A Bicycle?](https://www.youtube.com/watch?v=xbUxt2x4InE){:target="_blank"}
 
-I was a production assisant and recorded additional audio for the production of this NPR piece.
+I was a production assistant and recorded additional audio for the production of this NPR piece.
 
 ---
