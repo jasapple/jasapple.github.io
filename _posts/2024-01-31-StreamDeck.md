@@ -3,6 +3,8 @@ title: "Running Custom Scripts from a StreamDeck"
 last_modified_at: 2024-01-31T16:00:00-07:00
 ---
 
+# Running commands on an Elgato Streamdeck
+
 Originally posted here: [Reddit post](https://www.reddit.com/r/StreamDeckSDK/comments/tpa3l3/stream_deck_running_custom_scripts/){:target="_blank"}
 
 I have expanded on these findings and made working snippets I would use often with my StreamDeck which can be found on my GitHub [here](https://github.com/jasapple/deskScripts){:target="_blank"}.

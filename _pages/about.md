@@ -11,6 +11,6 @@ I started my professional career after college at Apple on the Siri Production E
 
 I then joined Amazon Web Services, AWS, as a Cloud Support Engineer within the linux profile.
 
-I have achieved my Certified Kubernetes Administrator (CKA) Certificate In April 2024: [https://www.credly.com/badges/cdc404af-2eda-4f75-a93c-b9c47a013047/public_url](https://www.credly.com/badges/cdc404af-2eda-4f75-a93c-b9c47a013047/public_url){:target="_blank"}
+I obtained my Certified Kubernetes Administrator (CKA) Certificate In April 2024: [https://www.credly.com/badges/cdc404af-2eda-4f75-a93c-b9c47a013047/public_url](https://www.credly.com/badges/cdc404af-2eda-4f75-a93c-b9c47a013047/public_url){:target="_blank"}
 
-I am currently learning Kubernetes, Ansible, more advanced programming in Python and experimenting with my [Homelab](/Home-lab)
+I am currently learning Kubernetes, Ansible, Terraform, more advanced programming in Python, and experimenting with my [Homelab](/Home-Lab-2)

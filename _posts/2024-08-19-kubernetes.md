@@ -5,7 +5,7 @@ last_modified_at: 2024-08-19-T21:00:00-07:00
 
 # Kubernetes
 
-I will discuss my Kubernetes (k8s) setup and how I resolved any issues I come across. Prepare to set sail ⛵️
+Here I'll describe my Kubernetes (k8s) setup and how I resolved any issues I come across. Prepare to set sail ⛵️
 
 
 ## Setup
@@ -15,20 +15,25 @@ I have setup dedicated VMs on my [homelab](/Home-Lab-2) as follows:
 | VM name | Physical Host | Role | base-os | Cluster |
 | - | - | - | - |
 | k8s-controller | ark | controller | Redhat 9.3 | Omega |
-| k8s-worker1 | ark | worker | Ubuntu 22.04 LTS | Omega |
-| k8s-worker2 | moonbase1 | worker | Ubuntu 22.04 LTS | Omega |
+| k8s-worker-1 | ark | worker | Ubuntu 22.04 LTS | Omega |
+| k8s-worker-2 | moonbase1 | worker | Ubuntu 22.04 LTS | Omega |
+| (TBD) k8s-worker-3 | moonbase2 | worker | Ubuntu 22.04 LTS | Omega |
 | trainer | ark | controller | Ubuntu 22.04 LTS | Alpha |
 | Ironhide | ark | worker | Ubuntu 22.04 LTS | Alpha |
 
 ## Clusters
 
-I was taking the training course [Linux Fondation LFS258](https://training.linuxfoundation.org/training/kubernetes-fundamentals/){:target="_blank"} I wanted to have an extra test bed to not interfere with my primary services. Additionally, I will often use this to test new releases of k8s and experiment with other configurations that may be harmful to my primary cluster. I configured my primary cluster, running on k8s-controller and k8s-worker*, as `Omega` and the cluster for training, running on trainer and Ironhide, as `Alpha`. I use `Cluster context` to switch between them in `kubectl` and `k9s` also picks this up and makes changing context easy. The below describes the setup within `Omega` unless otherwise stated.
+I have deployed two separate kubernetes clusters. I use `Alpha` for development and testing and `Omega` for 'production' workloads.
+
+The Alpha cluster originally came because I was taking the training course [Linux Fondation LFS258](https://training.linuxfoundation.org/training/kubernetes-fundamentals/){:target="_blank"} and I wanted to have an extra test bed to not interfere with my primary services. Additionally, I will often use this to test new releases of k8s and experiment with other configurations that may be harmful to my primary cluster. 
+
+I use `Cluster context` to switch between cluster in `kubectl` and `k9s`. The below describes the setup within `Omega` unless otherwise stated.
 
 `kubectl config use-context omega-admin@omega`
 
 I also have set my current namespace using `kubectl config set-context <context> --namespace <namespace>` to not have to keep adding the `-n` flag.
 
-[Autocomplete](https://medium.com/@bm54cloud/how-to-setup-kubectl-zsh-autocompletion-for-macos-2fb4d270cfab){:target="_blank"} helps. I have this in my `.zshrc`
+[Autocomplete](https://medium.com/@bm54cloud/how-to-setup-kubectl-zsh-autocompletion-for-macos-2fb4d270cfab){:target="_blank"} helps while running commands in the CLI. I have this in my `.zshrc`
 
 ```
 #kubernetes autocomplete
@@ -39,9 +44,13 @@ source <(kubectl completion zsh)
 
 ## Namespaces
 
-At the moment I have setup a 'monitoring' namespace for all monitoring related services. I am starting here as I like playing with and learning more about monitoring systems so this seemed like a good place to start.
+### minio
+An S3 compatible object store solution for kubernetes that can be served on-prem. 
 
-## MetalLB
+### Monitoring
+Namespace for all monitoring related services. I am starting here as I like playing with and learning more about monitoring systems so this seemed like a good place to start.
+
+### MetalLB
 
 To challenge myself and to work better with my networking setup, I opted to use ['metalLB'](https://metallb.universe.tf){:target="_blank"} within the cluster to assign IPs and to handle load balancing when I plan to scale my pods. I assigned the AddressPool the range `10.0.128.0/24` and modified my Unifi Network settings to keep the netmask to a `255.255.0.0` but assign IPs in the range `10.0.0.0/15` (range: 10.0.0.1 - 10.0.127.255 mask: 255.255.128.0) This ensures no IP collisions as I was unable to figure out (at this time) how to make the metalLB interface be assigned via DHCP.
 
@@ -63,8 +72,9 @@ I have setup the following deployments under the 'monitoring' namespace.
 
 
 
-## NFS
+## Storage
 
+### NFS
 For persistent storage I have setup a separate NFS share on my Synology NAS and mount the volumes from the pod directly.
 
 // TODO CFS plugin research. Is this actually even being used (?????)
@@ -72,6 +82,9 @@ For persistent storage I have setup a separate NFS share on my Synology NAS and 
 I have noticed that this setup requires that the underlying kubelet has the nfs-utils package installed in order for this to work properly. Trying to launch a pod on a kubelet without this package installed results in a launch error and a backoff status.
  TODO: add to Ansible to install nfs-utils for k8s nodes
 
+### minio
+
+I am using a dedicate NFS share for minio's object store, primarily for loki log storage.
 
 ## K9s
 

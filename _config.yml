@@ -1,6 +1,6 @@
 title: Joshua Amrik Singh
 email: hi@jasapple.com
-description: ""
+description: "SRE, devops, k8s"
 github_username: jasapple
 minimal_mistakes_skin: dark
 search: false
@@ -41,9 +41,6 @@ author:
   avatar : "/assets/images/logo.png"
   bio    : "Automate all the things!"
   links:
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://jasapple.com"
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jasapple"
