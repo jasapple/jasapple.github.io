@@ -6,7 +6,7 @@ minimal_mistakes_skin: dark
 search: false
 locale: "en-US"
 title_separator: "|"
-url: "https://jasapple.com"
+url: "http://localhost:4000"
 
 analytics:
   provider: "google-gtag"
@@ -16,8 +16,7 @@ analytics:
 
 # Build settings
 markdown: kramdown
-remote_theme: "mmistakes/minimal-mistakes@4.27.3"
-
+# remote_theme: mmistakes/minimal-mistakes
 # Outputting
 permalink: /:categories/:title/
 paginate: 5 # amount of posts to show

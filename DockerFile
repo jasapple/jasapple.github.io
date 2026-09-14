@@ -1,0 +1,20 @@
+FROM ruby:3.2-bookworm
+
+LABEL author="Joshua Singh <hi@jasapple.com>"
+
+RUN apt-get update -qq && \
+    apt-get install -y --no-install-recommends \
+        build-essential \
+        nodejs && \
+    rm -rf /var/lib/apt/lists/*
+
+WORKDIR /site
+
+COPY Gemfile Gemfile.lock* ./
+
+RUN gem install bundler && \
+    bundle install
+
+EXPOSE 4000
+
+CMD ["bundle", "exec", "jekyll", "serve", "--force_polling", "-H", "0.0.0.0", "-P", "4000"]
