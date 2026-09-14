@@ -16,7 +16,7 @@ analytics:
 
 # Build settings
 markdown: kramdown
-remote_theme: "mmistakes/minimal-mistakes@4.27.3"
+remote_theme: "mmistakes/minimal-mistakes@4.28.1"
 
 # Outputting
 permalink: /:categories/:title/
