@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 permissions:
@@ -31,7 +30,15 @@ jobs:
           bundler-cache: true
 
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
+
+      - name: Show dependency versions
+        run: |
+          ruby --version
+          bundle --version
+          bundle exec jekyll --version
+          bundle exec gem list github-pages jekyll
 
       - name: Build Jekyll
         run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
